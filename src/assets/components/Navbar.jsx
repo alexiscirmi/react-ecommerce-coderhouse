@@ -1,26 +1,33 @@
 function Navbar() {
   return (
     <div>
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <header className="navbar navbar-expand-lg d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4 border-bottom">
 
-        <div className="col-md-3 mb-2 mb-md-0">
-          <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
+        <nav className="container-fluid container-lg">
 
-          </a>
-        </div>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-        <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" className="nav-link px-2 link-secondary">Home</a></li>
-          <li><a href="/" className="nav-link px-2">Features</a></li>
-          <li><a href="/" className="nav-link px-2">Pricing</a></li>
-          <li><a href="/" className="nav-link px-2">FAQs</a></li>
-          <li><a href="/" className="nav-link px-2">About</a></li>
-        </ul>
+          <ul className="collapse navbar-collapse navbar-nav col-4 mb-2 justify-content-center mb-md-0" id="navbarToggler">
+            <li className="nav-item"><a href="#" className="nav-link px-2 link-secondary">Inicio</a></li>
+            <li className="nav-item"><a href="#" className="nav-link px-2 link-secondary">Galería</a></li>
+            <li className="nav-item"><a href="#" className="nav-link px-2 link-secondary">Precios</a></li>
+            <li className="nav-item"><a href="#" className="nav-link px-2 link-secondary">Contacto</a></li>
+          </ul>
 
-        <div className="col-md-3 text-end">
-          <button type="button" className="btn btn-outline-primary me-2">Login</button>
-          <button type="button" className="btn btn-primary">Sign-up</button>
-        </div>
+          <div className="col-4 mb-2 mb-md-0 text-center">
+            <a href="#" className="navbar-brand d-inline-flex link-body-emphasis text-decoration-none py-0 mx-0">
+              Marcotel
+            </a>
+          </div>
+
+          <div className="col-4 text-end">
+            <button type="button" className="btn btn-outline-secondary me-2">Entrar</button>
+            <button type="button" className="btn btn-outline-secondary">Registrarse</button>
+          </div>
+
+        </nav>
 
       </header>
     </div>
