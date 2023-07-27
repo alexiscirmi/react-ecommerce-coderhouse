@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 html,
 body,
 #root,
@@ -15,6 +16,10 @@ body,
   background-color: #f5ebe0;
 }
 
+a {
+  text-decoration: none;
+}
+
 footer {
   margin-top: auto;
 }
@@ -22,6 +27,11 @@ footer {
 .navbar-brand {
   font-family: "Allison", cursive;
   font-size: 50px;
+}
+
+.bi-c-circle {
+  transform: rotate(180deg);
+  translate: 0 -10%;
 }
 
 /*# sourceMappingURL=style.css.map */
