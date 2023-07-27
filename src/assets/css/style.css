@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Allison&display=swap");
 html,
-body {
+body,
+#root,
+.App {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
 }
 
-body {
+.App {
   display: flex;
   flex-flow: column;
   background-color: #f5ebe0;
