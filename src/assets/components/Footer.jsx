@@ -18,15 +18,15 @@ function Footer() {
 
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li className="ms-3"><a className="text-body-secondary" href="#">
-          <i class="bi bi-facebook" />
+          <i className="bi bi-facebook" />
         </a></li>
 
         <li className="ms-3"><a className="text-body-secondary" href="#">
-          <i class="bi bi-instagram" />
+          <i className="bi bi-instagram" />
         </a></li>
 
         <li className="ms-3"><a className="text-body-secondary" href="#">
-          <i class="bi bi-whatsapp" />
+          <i className="bi bi-whatsapp" />
         </a></li>
       </ul>
 
