@@ -71,6 +71,10 @@ footer {
   background-color: #279af1;
 }
 
+.item-list-container {
+  margin-top: 110px;
+}
+
 .bi-c-circle {
   transform: rotate(180deg);
   translate: 0 -10%;

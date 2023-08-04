@@ -2,7 +2,7 @@ import CartWidget from "./CartWidget";
 
 function Navbar() {
   return (
-    <header className="navbar navbar-expand-md fixed-top mb-4 border-bottom" data-bs-theme="dark">
+    <header className="navbar navbar-expand-md fixed-top border-bottom" data-bs-theme="dark">
 
       <nav className="container-fluid d-flex align-items-center justify-content-around">
 
@@ -12,7 +12,17 @@ function Navbar() {
 
         <ul className="collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-0 my-3 my-md-0" id="navbarToggler">
           <li className="nav-item"><a href="#" className="nav-link px-3">Inicio</a></li>
-          <li className="nav-item"><a href="#" className="nav-link px-3">Productos</a></li>
+          <li className="nav-item dropdown">
+            <button class="btn btn-dark dropdown-toggle nav-link px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Productos
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Todo</a></li>
+              <li><a class="dropdown-item" href="#">Celulares</a></li>
+              <li><a class="dropdown-item" href="#">Computadoras</a></li>
+              <li><a class="dropdown-item" href="#">Tablets</a></li>
+            </ul>
+          </li>
         </ul>
 
         <div className="col-md-4 text-center">

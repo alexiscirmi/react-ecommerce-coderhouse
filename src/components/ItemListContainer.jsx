@@ -1,7 +1,7 @@
-function ItemListContainer() {
+function ItemListContainer({ greeting }) {
   return (
-    <div>
-
+    <div className='item-list-container container'>
+      <p>{greeting}</p>
     </div>
   );
 }
