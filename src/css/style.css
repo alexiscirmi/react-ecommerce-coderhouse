@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+html,
+body,
+#root,
+.App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-flow: column;
+  background-color: #f7f7ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.brand-font, .navbar-brand {
+  font-family: "Silkscreen", cursive;
+  color: #f7f7ff !important;
+  text-shadow: 0 0 1px #fff, 0 0 10px #279af1, 0 0 20px #279af1, 0 0 22px #279af1, 0 0 25px #279af1, 0 0 35px #279af1;
+}
+
+.navbar {
+  background-color: #070600;
+}
+
+.navbar-brand {
+  font-size: 50px;
+}
+
+.nav-link {
+  color: #f7f7ff;
+}
+.nav-link:hover {
+  color: #23b5d3;
+}
+
+.navbar-toggler-icon {
+  color: #f7f7ff;
+}
+
+.cart-widget-container {
+  color: #f7f7ff;
+  position: relative;
+}
+.cart-widget-container:hover {
+  color: #23b5d3;
+}
+
+.cart-widget-amount {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  align-content: center;
+  top: -5px;
+  left: 26px;
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  color: #f7f7ff;
+  background-color: #279af1;
+}
+
+.bi-c-circle {
+  transform: rotate(180deg);
+  translate: 0 -10%;
+}
+
+/*# sourceMappingURL=style.css.map */

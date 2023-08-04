@@ -1,12 +1,13 @@
-import './App.css';
-import './assets/css/style.css';
-import Navbar from './assets/components/Navbar.jsx';
-import Footer from './assets/components/Footer.jsx';
+import './css/style.css';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
     <div className='App'>
       <Navbar />
+      <ItemListContainer />
       <Footer />
     </div>
   );
