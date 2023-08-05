@@ -1,3 +1,5 @@
+import './_item-list-container.scss';
+
 function ItemListContainer({ greeting }) {
   return (
     <div className='item-list-container container'>

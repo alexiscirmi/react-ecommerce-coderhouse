@@ -1,0 +1,30 @@
+@import '../../assets/scss/colors';
+
+.navbar {
+  background-color: $color5;
+}
+
+.navbar-brand {
+  font-family: 'Silkscreen', cursive;
+  color: $color1 !important;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 10px $color3,
+    0 0 20px $color3,
+    0 0 22px $color3,
+    0 0 25px $color3,
+    0 0 35px $color3;
+  font-size: 50px;
+}
+
+.nav-link {
+  color: $color1;
+
+  &:hover {
+    color: $color2;
+  }
+}
+
+.navbar-toggler-icon {
+  color: $color1;
+}
