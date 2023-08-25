@@ -15,10 +15,9 @@ function Navbar() {
           <li className='nav-item'><a href='#navbar' className='nav-link px-3'>Inicio</a></li>
           <li className='nav-item dropdown'>
             <button className='btn btn-dark dropdown-toggle nav-link px-3' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
-              Productos
+              Categorías
             </button>
             <ul className='dropdown-menu'>
-              <li><a className='dropdown-item' href='#navbar'>Todo</a></li>
               <li><a className='dropdown-item' href='#navbar'>Celulares</a></li>
               <li><a className='dropdown-item' href='#navbar'>Computadoras</a></li>
               <li><a className='dropdown-item' href='#navbar'>Tablets</a></li>
