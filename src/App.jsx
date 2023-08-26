@@ -1,3 +1,5 @@
+import './assets/scss/_colors.scss';
+import './App.scss';
 import Router from "./router/Router";
 
 function App() {
@@ -6,6 +8,6 @@ function App() {
       <Router />
     </div>
   );
-}
+};
 
 export default App;

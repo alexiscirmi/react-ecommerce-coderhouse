@@ -1,5 +1,6 @@
 import './_navbar.scss';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -12,23 +13,21 @@ function Navbar() {
         </button>
 
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-0 my-3 my-md-0' id='navbarToggler'>
-          <li className='nav-item'><a href='#navbar' className='nav-link px-3'>Inicio</a></li>
+          <Link to='/' className='nav-item nav-link px-3'>Inicio</Link>
           <li className='nav-item dropdown'>
             <button className='btn btn-dark dropdown-toggle nav-link px-3' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
               Categorías
             </button>
-            <ul className='dropdown-menu'>
-              <li><a className='dropdown-item' href='#navbar'>Celulares</a></li>
-              <li><a className='dropdown-item' href='#navbar'>Computadoras</a></li>
-              <li><a className='dropdown-item' href='#navbar'>Tablets</a></li>
-            </ul>
+            <div className='dropdown-menu'>
+              <Link to='/category/celulares' className='dropdown-item'>Celulares</Link>
+              <Link to='/category/computadoras' className='dropdown-item'>Computadoras</Link>
+              <Link to='/category/tablets' className='dropdown-item'>Tablets</Link>
+            </div>
           </li>
         </ul>
 
         <div className='col-md-4 text-center'>
-          <a href='#navbar' className='navbar-brand d-inline-flex text-decoration-none py-0 mx-0'>
-            TECNOW
-          </a>
+          <Link to='/' className='navbar-brand d-inline-flex text-decoration-none py-0 mx-0'>TECNOW</Link>
         </div>
 
         <div className='col-md-4 text-center d-flex justify-content-center'>
@@ -39,6 +38,6 @@ function Navbar() {
 
     </header>
   );
-}
+};
 
 export default Navbar;

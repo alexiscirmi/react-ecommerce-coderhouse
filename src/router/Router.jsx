@@ -1,5 +1,3 @@
-import '../assets/scss/_colors.scss';
-import '../App.scss';
 import Navbar from '../components/Navbar/Navbar.jsx';
 import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
 import {
@@ -14,7 +12,7 @@ function Router() {
       <Navbar />
       <Routes>
         <Route path='/' element={<ItemListContainer greeting='Hola mundo' />} />
-        {/* <Route path='users/*' element={<Users />} /> */}
+        <Route path='/category/:id' element={<ItemListContainer />} />
       </Routes>
     </BrowserRouter>
   )
