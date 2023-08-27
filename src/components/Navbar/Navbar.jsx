@@ -1,6 +1,6 @@
-import './_navbar.scss';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
+import './_navbar.scss';
 
 function Navbar() {
   return (
@@ -19,9 +19,10 @@ function Navbar() {
               Categorías
             </button>
             <div className='dropdown-menu'>
-              <Link to='/category/celulares' className='dropdown-item'>Celulares</Link>
-              <Link to='/category/computadoras' className='dropdown-item'>Computadoras</Link>
-              <Link to='/category/tablets' className='dropdown-item'>Tablets</Link>
+              <Link to='/category/electronics' className='dropdown-item'>Electrónica</Link>
+              <Link to='/category/jewelery' className='dropdown-item'>Joyería</Link>
+              <Link to='/category/men' className='dropdown-item'>Ropa de hombre</Link>
+              <Link to='/category/women' className='dropdown-item'>Ropa de mujer</Link>
             </div>
           </li>
         </ul>

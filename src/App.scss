@@ -10,12 +10,12 @@ body,
   padding: 0;
   height: 100%;
   width: 100%;
+  background-color: $color1;
 }
 
 .App {
   display: flex;
   flex-flow: column;
-  background-color: $color1;
 }
 
 a {
