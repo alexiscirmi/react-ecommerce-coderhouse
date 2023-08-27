@@ -11,9 +11,23 @@
   text-wrap: balance;
 }
 
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 250px;
+  align-content: center;
+  justify-content: center;
+}
+
 .card-img-top {
+  height: fit-content;
   max-height: 250px;
-  width: max-content;
+  width: fit-content;
+  max-width: 250px;
+}
+
+.card-text {
+  color: $color4;
 }
 
 .btn-primary {
