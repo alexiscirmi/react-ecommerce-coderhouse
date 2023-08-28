@@ -4,7 +4,7 @@ import './_navbar.scss';
 
 function Navbar() {
   return (
-    <header className='navbar navbar-expand-md fixed-top border-bottom' data-bs-theme='dark'>
+    <header className='navbar navbar-expand-md fixed-top border-bottom  mb-5' data-bs-theme='dark'>
 
       <nav className='container-fluid d-flex align-items-center justify-content-around' id='navbar'>
 

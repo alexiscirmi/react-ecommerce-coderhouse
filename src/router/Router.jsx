@@ -1,11 +1,11 @@
-import Navbar from '../components/Navbar/Navbar.jsx';
-import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer.jsx'
 import {
   BrowserRouter,
   Routes,
   Route
 } from 'react-router-dom';
+import Navbar from '../components/Navbar/Navbar.jsx';
+import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer.jsx'
 
 function Router() {
   return (
