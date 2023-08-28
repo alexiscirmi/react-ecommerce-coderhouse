@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './_item-list-container.scss';
 
-function ItemListContainer({ greeting }) {
+function ItemListContainer() {
 
   const [list, setList] = useState([]);
   const params = useParams();
@@ -11,11 +11,12 @@ function ItemListContainer({ greeting }) {
     const response = await fetch('https://fakestoreapi.com/products');
     const items = await response.json();
     const filteredItems = items.filter((item) => item.category === params.id);
-    setList(items);
+    setList(filteredItems.length > 0 ? filteredItems : items);
   };
 
   useEffect(() => {
-    getItems()
+    getItems();
+    // eslint-disable-next-line
   }, [params]);
 
   return (
@@ -32,12 +33,12 @@ function ItemListContainer({ greeting }) {
                 <div className='card-body d-flex flex-column justify-content-between'>
                   <h5 className='card-title'>{item.title}</h5>
                   <div className='border-top'>
-                    <p className='card-text fs-4 mt-1 mb-2'>$ {item.price}</p>
+                    <p className='card-text fs-4 mt-2 mb-3'>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
                     <div className='d-flex justify-content-between'>
                       <div className='btn btn-primary'>Ver descripción</div>
-                      <button className='btn btn-primary'>-</button>
+                      <button className='btn btn-dark'>-</button>
                       <span className='btn'>0</span>
-                      <button className='btn btn-primary'>+</button>
+                      <button className='btn btn-dark'>+</button>
                     </div>
                   </div>
                 </div>

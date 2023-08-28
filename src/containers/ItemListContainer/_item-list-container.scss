@@ -38,3 +38,12 @@
     background-color: $color2;
   }
 }
+
+.btn-dark {
+  background-color: $color5;
+  border-color: $color5;
+
+  &:hover {
+    background-color: $color4;
+  }
+}

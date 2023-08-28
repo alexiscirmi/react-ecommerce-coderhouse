@@ -21,8 +21,8 @@ function Navbar() {
             <div className='dropdown-menu'>
               <Link to='/category/electronics' className='dropdown-item'>Electrónica</Link>
               <Link to='/category/jewelery' className='dropdown-item'>Joyería</Link>
-              <Link to='/category/men' className='dropdown-item'>Ropa de hombre</Link>
-              <Link to='/category/women' className='dropdown-item'>Ropa de mujer</Link>
+              <Link to="/category/men's clothing" className='dropdown-item'>Ropa de hombre</Link>
+              <Link to="/category/women's clothing" className='dropdown-item'>Ropa de mujer</Link>
             </div>
           </li>
         </ul>
