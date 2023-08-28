@@ -32,15 +32,8 @@ function ItemListContainer() {
                 <div className='card-body d-flex flex-column justify-content-between'>
                   <h5 className='card-title'>{item.title}</h5>
                   <div className='border-top'>
-                    <p className='card-text fs-4 mt-2 mb-3'>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                    <div className='d-flex justify-content-between'>
-                      <Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>
-                      <div>
-                        <button className='btn btn-dark'>-</button>
-                        <span className='btn'>0</span>
-                        <button className='btn btn-dark'>+</button>
-                      </div>
-                    </div>
+                    <p className='card-text fs-4 mt-2 mb-3 item-price'>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                    <Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>
                   </div>
                 </div>
               </div>

@@ -21,3 +21,16 @@ body,
 a {
   text-decoration: none;
 }
+
+.balance {
+  text-wrap: balance;
+}
+
+.btn-primary {
+  background-color: $color3;
+  border-color: $color3;
+
+  &:hover {
+    background-color: $color2;
+  }
+}

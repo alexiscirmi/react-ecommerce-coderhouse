@@ -1,8 +1,14 @@
+@import '../../assets/scss/colors';
+
 .item-detail {
   margin-top: 100px;
 }
 
-img {
+.item-image {
   max-width: 100%;
   max-height: 70vh;
+}
+
+.item-category {
+  color: $color4;
 }

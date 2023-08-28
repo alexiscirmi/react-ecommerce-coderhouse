@@ -26,24 +26,6 @@
   max-width: 250px;
 }
 
-.card-text {
+.item-price {
   color: $color4;
-}
-
-.btn-primary {
-  background-color: $color3;
-  border-color: $color3;
-
-  &:hover {
-    background-color: $color2;
-  }
-}
-
-.btn-dark {
-  background-color: $color5;
-  border-color: $color5;
-
-  &:hover {
-    background-color: $color4;
-  }
 }
