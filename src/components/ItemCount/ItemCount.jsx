@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './_item-count.scss';
 
 function ItemCount() {
 
@@ -15,7 +16,7 @@ function ItemCount() {
   return (
     <div>
       <button className='btn btn-primary' onClick={subtractAmount}>-</button>
-      <span className='btn'>{amount}</span>
+      <span className='amount-counter'>{amount}</span>
       <button className='btn btn-primary' onClick={addAmount}>+</button>
     </div>
   );
