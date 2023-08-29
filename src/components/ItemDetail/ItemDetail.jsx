@@ -7,11 +7,11 @@ function ItemDetail({ detail }) {
     <main className='item-detail container-fluid container-lg'>
       <div className='d-flex flex-row mt-4'>
 
-        <div className='col-6'>
+        <div className='col-md-6'>
           <img src={detail.image} alt={detail.title} className='border rounded item-image' />
         </div>
 
-        <div className='text-end balance col-6'>
+        <div className='text-end balance col-md-6'>
           <h1 className='fs-2'>{detail.title}</h1>
           <h2 className='fs-5 item-category'>{detail.category}</h2>
           <p>{detail.description}</p>
