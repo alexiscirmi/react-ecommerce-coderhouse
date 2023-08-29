@@ -4,7 +4,7 @@ import './_item-detail.scss'
 function ItemDetail({ detail }) {
 
   return (
-    <main className='item-detail container-fluid container-lg'>
+    <main className='item-detail container'>
       <div className='d-block row d-md-flex flex-md-row mt-4'>
 
         <div className='text-center col-md-6'>
