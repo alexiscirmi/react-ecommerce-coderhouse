@@ -1,6 +1,6 @@
-import CartWidget from '../CartWidget/CartWidget';
-import { Link } from 'react-router-dom';
-import './_navbar.scss';
+import CartWidget from '../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
+import './_navbar.scss'
 
 function Navbar() {
   return (
@@ -45,7 +45,7 @@ function Navbar() {
       </nav>
 
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

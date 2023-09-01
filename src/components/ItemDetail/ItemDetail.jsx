@@ -1,4 +1,4 @@
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from '../ItemCount/ItemCount'
 import './_item-detail.scss'
 
 function ItemDetail({ detail }) {
@@ -21,7 +21,7 @@ function ItemDetail({ detail }) {
 
       </div>
     </main>
-  );
+  )
 }
 
-export default ItemDetail;
+export default ItemDetail

@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import './_item-list-container.scss';
+import { useState, useEffect } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import './_item-list-container.scss'
 
 function ItemListContainer() {
 
-  const [list, setList] = useState([]);
-  const params = useParams();
+  const [list, setList] = useState([])
+  const params = useParams()
 
   useEffect(() => {
     const getItems = async () => {
-      const response = await fetch('https://fakestoreapi.com/products');
-      const items = await response.json();
-      const filteredItems = items.filter((item) => item.category === params.id);
-      setList(filteredItems.length > 0 ? filteredItems : items);
-    };
+      const response = await fetch('https://fakestoreapi.com/products')
+      const items = await response.json()
+      const filteredItems = items.filter((item) => item.category === params.id)
+      setList(filteredItems.length > 0 ? filteredItems : items)
+    }
 
-    getItems();
-  }, [params]);
+    getItems()
+  }, [params])
 
   return (
     <main className='item-list-container container-fluid container-lg'>
@@ -43,7 +43,7 @@ function ItemListContainer() {
 
       </div>
     </main >
-  );
+  )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
