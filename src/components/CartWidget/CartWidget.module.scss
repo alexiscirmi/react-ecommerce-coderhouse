@@ -1,6 +1,6 @@
 @import '../../assets/scss/colors';
 
-.cart-widget-container {
+.cartWidgetContainer {
   color: $color1;
   position: relative;
 
@@ -9,7 +9,7 @@
   }
 }
 
-.cart-widget-amount {
+.cartWidgetAmount {
   display: inline-block;
   position: absolute;
   text-align: center;
