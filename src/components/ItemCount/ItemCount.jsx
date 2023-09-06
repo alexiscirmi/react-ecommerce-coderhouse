@@ -4,25 +4,28 @@ import styles from './ItemCount.module.scss'
 
 function ItemCount() {
 
-  const [amount, setAmount] = useState(0)
+  const [itemCount, setItemCount] = useState(0)
 
   const { addCartCount, subtractCartCount } = useContext(CartContext)
 
-  const subtractAmount = () => {
-    amount > 0 && setAmount(amount - 1)
-    subtractCartCount()
+  const subtractItemCount = () => {
+    if (itemCount > 0) {
+      setItemCount(itemCount - 1)
+      subtractCartCount()
+    }
+
   }
 
-  const addAmount = () => {
-    setAmount(amount + 1)
+  const addItemCount = () => {
+    setItemCount(itemCount + 1)
     addCartCount()
   }
 
   return (
     <div>
-      <button className='btn btn-primary' onClick={subtractAmount}>-</button>
-      <span className={styles.amountCounter}>{amount}</span>
-      <button className='btn btn-primary' onClick={addAmount}>+</button>
+      <button className='btn btn-primary' onClick={subtractItemCount}>-</button>
+      <span className={styles.amountCounter}>{itemCount}</span>
+      <button className='btn btn-primary' onClick={addItemCount}>+</button>
     </div>
   )
 }
