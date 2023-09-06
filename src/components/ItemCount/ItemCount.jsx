@@ -13,7 +13,6 @@ function ItemCount() {
       setItemCount(itemCount - 1)
       subtractCartCount()
     }
-
   }
 
   const addItemCount = () => {
