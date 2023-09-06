@@ -1,27 +1,27 @@
 import CartWidget from '../CartWidget/CartWidget'
 import { Link } from 'react-router-dom'
-import './_navbar.scss'
+import styles from './Navbar.module.scss'
 
 function Navbar() {
   return (
-    <header className='navbar navbar-expand-md fixed-top border-bottom  mb-5' data-bs-theme='dark'>
+    <header className={`navbar navbar-expand-md fixed-top border-bottom mb-5 ${styles.navbar}`} data-bs-theme='dark'>
 
       <nav className='container-fluid d-flex align-items-center justify-content-around' id='navbar'>
 
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggler' aria-controls='navbarToggler' aria-expanded='false' aria-label='Toggle navigation'>
-          <span className='navbar-toggler-icon'></span>
+          <span className={`navbar-toggler-icon ${styles.navbarTogglerIcon}`}></span>
         </button>
 
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-0 my-3 my-md-0' id='navbarToggler'>
-          <Link to='/' className='nav-item nav-link px-3'>Inicio</Link>
+          <Link to='/' className={`nav-item nav-link px-3 ${styles.navLink}`}>Inicio</Link>
 
-          <Link to='/category/electronics' className='d-md-none nav-item nav-link'>Electrónica</Link>
-          <Link to='/category/jewelery' className='d-md-none nav-item nav-link'>Joyería</Link>
-          <Link to="/category/men's clothing" className='d-md-none nav-item nav-link'>Ropa de hombre</Link>
-          <Link to="/category/women's clothing" className='d-md-none nav-item nav-link'>Ropa de mujer</Link>
+          <Link to='/category/electronics' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Electrónica</Link>
+          <Link to='/category/jewelery' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Joyería</Link>
+          <Link to="/category/men's clothing" className={`d-md-none nav-item nav-link ${styles.navLink}`}>Ropa de hombre</Link>
+          <Link to="/category/women's clothing" className={`d-md-none nav-item nav-link ${styles.navLink}`}>Ropa de mujer</Link>
 
           <li className='nav-item dropdown d-none d-md-block'>
-            <button className='btn btn-dark dropdown-toggle nav-link px-3' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
+            <button className={`btn btn-dark dropdown-toggle nav-link px-3 ${styles.navLink}`} type='button' data-bs-toggle='dropdown' aria-expanded='false'>
               Categorías
             </button>
             <div className='dropdown-menu'>
@@ -35,7 +35,7 @@ function Navbar() {
         </ul>
 
         <div className='col-md-4 text-center'>
-          <Link to='/' className='navbar-brand d-inline-flex text-decoration-none py-0 mx-0'>TECNOW</Link>
+          <Link to='/' className={`navbar-brand d-inline-flex text-decoration-none py-0 mx-0 ${styles.navbarBrand}`}>TECNOW</Link>
         </div>
 
         <div className='col-md-4 text-center d-flex justify-content-center'>

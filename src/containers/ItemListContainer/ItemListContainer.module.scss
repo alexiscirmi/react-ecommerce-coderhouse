@@ -1,6 +1,6 @@
 @import '../../assets/scss/colors';
 
-.item-list-container {
+.itemListContainer {
   margin-top: 100px;
   width: 100%;
 }
@@ -11,7 +11,7 @@
   text-wrap: balance;
 }
 
-.image-container {
+.imageContainer {
   display: flex;
   flex-wrap: wrap;
   height: 250px;
@@ -19,13 +19,13 @@
   justify-content: center;
 }
 
-.card-img-top {
+.cardImgTop {
   height: fit-content;
   max-height: 250px;
   width: fit-content;
   max-width: 250px;
 }
 
-.item-price {
+.itemPrice {
   color: $color4;
 }

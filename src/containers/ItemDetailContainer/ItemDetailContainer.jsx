@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../../components/ItemDetail/ItemDetail'
-import './_item-detail-container.scss'
 
 function ItemDetailContainer() {
 

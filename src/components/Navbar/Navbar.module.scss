@@ -4,7 +4,7 @@
   background-color: $color5;
 }
 
-.navbar-brand {
+.navbarBrand {
   font-family: 'Silkscreen', cursive;
   color: $color1 !important;
   text-shadow:
@@ -17,7 +17,7 @@
   font-size: 50px;
 }
 
-.nav-link {
+.navLink {
   color: $color1;
 
   &:hover {
@@ -25,6 +25,6 @@
   }
 }
 
-.navbar-toggler-icon {
+.navbarTogglerIcon {
   color: $color1;
 }

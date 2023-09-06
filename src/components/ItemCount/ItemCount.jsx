@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
 import { CartContext } from '../context/cartContext'
-import './_item-count.scss'
+import styles from './ItemCount.module.scss'
 
 function ItemCount() {
 
@@ -21,7 +21,7 @@ function ItemCount() {
   return (
     <div>
       <button className='btn btn-primary' onClick={subtractAmount}>-</button>
-      <span className='amount-counter'>{amount}</span>
+      <span className={styles.amountCounter}>{amount}</span>
       <button className='btn btn-primary' onClick={addAmount}>+</button>
     </div>
   )
