@@ -4,7 +4,7 @@ import './App.scss'
 
 // Firebase
 import { db } from './firebase/client'
-import { getDoc, getDocs, doc, collection, query, where, limit } from 'firebase/firestore'
+import { getDoc, doc, collection, query, where, limit } from 'firebase/firestore'
 import { useEffect } from 'react'
 
 function App() {
@@ -21,13 +21,7 @@ function App() {
       }
     })
   }
-  // Para obtener toda la colección
-  const itemsRef = collection(db, 'items')
-  const getItems = async () => {
-    const data = await getDocs(itemsRef)
-    const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    console.log(dataFiltrada)
-  }
+
   // Filtro
   const itemsRefFilter = query(
     collection(db, 'items'),
@@ -39,7 +33,6 @@ function App() {
   // Ejecuta la función
   useEffect(() => {
     getItem()
-    getItems()
   }, [])
 
   return (

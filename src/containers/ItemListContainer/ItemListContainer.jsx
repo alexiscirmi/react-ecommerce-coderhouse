@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import styles from './ItemListContainer.module.scss'
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/client'
 
 function ItemListContainer() {
 
@@ -8,11 +10,14 @@ function ItemListContainer() {
   const params = useParams()
 
   useEffect(() => {
+
+    // Firebase - Para obtener toda la colección
+    const itemsRef = collection(db, 'items')
     const getItems = async () => {
-      const response = await fetch('https://fakestoreapi.com/products')
-      const items = await response.json()
-      const filteredItems = items.filter((item) => item.category === params.id)
-      setList(filteredItems.length > 0 ? filteredItems : items)
+      const data = await getDocs(itemsRef)
+      const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      console.log(dataFiltrada)
+      setList(dataFiltrada)
     }
 
     getItems()
