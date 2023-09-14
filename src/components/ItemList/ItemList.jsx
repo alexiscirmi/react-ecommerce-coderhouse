@@ -8,7 +8,7 @@ function ItemList({ list }) {
 
         {
           list.map((item) => (
-            <Item item={item} />
+            <Item key={item.id} item={item} />
           ))
         }
 

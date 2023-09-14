@@ -3,7 +3,7 @@ import styles from './Item.module.scss'
 
 function Item({ item }) {
   return (
-    <div key={item.id} className='d-flex col justify-content-center my-4'>
+    <div className='d-flex col justify-content-center my-4'>
       <div className={`card ${styles.card}`}>
         <div className={`mt-1 image-container ${styles.imageContainer}`}>
           <img src={item.image} className={styles.cardImgTop} alt='...' />
