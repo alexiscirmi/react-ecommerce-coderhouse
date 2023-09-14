@@ -6,14 +6,14 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore'
 function ItemDetailContainer() {
 
   const [detail, setDetail] = useState({})
-  const params = useParams()
+  const { itemId } = useParams()
 
   useEffect(() => {
 
     // Firebase - Get a specific document
     const db = getFirestore()
     const itemRef = doc(db, 'items',
-      params)
+      itemId)
     getDoc(itemRef)
       .then(snapshot => {
         if (snapshot.exists()) {
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
         }
       })
 
-  }, [params])
+  }, [itemId])
 
   return (
     <ItemDetail detail={detail} />

@@ -1,27 +1,30 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import styles from './ItemListContainer.module.scss'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../../firebase/client'
 
 function ItemListContainer() {
 
   const [list, setList] = useState([])
-  const params = useParams()
+  const { categoryId } = useParams()
 
   useEffect(() => {
 
-    // Firebase - Para obtener toda la colección
-    const itemsRef = collection(db, 'items')
+    // Firebase - Get filtered products or all products if params are not being used
+
+    const itemsRef = categoryId
+      ? query(collection(db, 'items'), where('categoryId', '==', categoryId))
+      : collection(db, 'items')
+
     const getItems = async () => {
       const data = await getDocs(itemsRef)
-      const dataFiltrada = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-      console.log(dataFiltrada)
+      const dataFiltrada = data.docs.map(doc => ({ id: doc.id, ...doc.data() }))
       setList(dataFiltrada)
     }
     getItems()
 
-  }, [params])
+  }, [categoryId])
 
   return (
     <main className={`item-list-container container-fluid container-lg ${styles.itemListContainer}`}>
@@ -29,7 +32,7 @@ function ItemListContainer() {
 
         {
           list.map((item) => (
-            <div key={item.id} className='d-flex col justify-content-center my-4'>
+            <div key={item.itemId} className='d-flex col justify-content-center my-4'>
               <div className={`card ${styles.card}`}>
                 <div className={`mt-1 image-container ${styles.imageContainer}`}>
                   <img src={item.image} className={styles.cardImgTop} alt='...' />
@@ -38,7 +41,7 @@ function ItemListContainer() {
                   <h5 className='card-title'>{item.title}</h5>
                   <div className='border-top'>
                     <p className={`card-text fs-4 mt-2 mb-3 ${styles.itemPrice}`}>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                    <Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>
+                    <Link to={`/item/${item.itemId}`} className='btn btn-primary'>Ver descripción</Link>
                   </div>
                 </div>
               </div>
