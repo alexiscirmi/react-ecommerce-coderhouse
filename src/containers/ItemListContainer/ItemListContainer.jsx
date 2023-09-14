@@ -32,7 +32,7 @@ function ItemListContainer() {
 
         {
           list.map((item) => (
-            <div key={item.itemId} className='d-flex col justify-content-center my-4'>
+            <div key={item.id} className='d-flex col justify-content-center my-4'>
               <div className={`card ${styles.card}`}>
                 <div className={`mt-1 image-container ${styles.imageContainer}`}>
                   <img src={item.image} className={styles.cardImgTop} alt='...' />
@@ -41,7 +41,7 @@ function ItemListContainer() {
                   <h5 className='card-title'>{item.title}</h5>
                   <div className='border-top'>
                     <p className={`card-text fs-4 mt-2 mb-3 ${styles.itemPrice}`}>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                    <Link to={`/item/${item.itemId}`} className='btn btn-primary'>Ver descripción</Link>
+                    <Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ function ItemDetail({ detail }) {
 
         <div className='text-center text-md-end balance col-md-6 mt-4 mt-md-0 mb-5'>
           <h1 className='fs-2'>{detail.title}</h1>
-          <h2 className={`fs-5 ${styles.itemCategory}`}>{detail.category}</h2>
+          <h2 className={`fs-5 ${styles.itemCategory}`}>{detail.categoryId && detail.categoryId.toUpperCase()}</h2>
           <p>{detail.description}</p>
           <p className='fs-4 item-price'>$ {parseFloat(detail.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
           <ItemCount />
