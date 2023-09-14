@@ -2,7 +2,7 @@ import { useState, useContext } from 'react'
 import { CartContext } from '../context/cartContext'
 import styles from './ItemCount.module.scss'
 
-function ItemCount() {
+function ItemCount({ detail }) {
 
   const [itemCount, setItemCount] = useState(0)
 
@@ -16,8 +16,10 @@ function ItemCount() {
   }
 
   const addItemCount = () => {
-    setItemCount(itemCount + 1)
-    addCartCount()
+    if (detail.stock > itemCount) {
+      setItemCount(itemCount + 1)
+      addCartCount()
+    }
   }
 
   return (

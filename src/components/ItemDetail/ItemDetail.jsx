@@ -16,7 +16,8 @@ function ItemDetail({ detail }) {
           <h2 className={`fs-5 ${styles.itemCategory}`}>{detail.categoryId && detail.categoryId.toUpperCase()}</h2>
           <p>{detail.description}</p>
           <p className='fs-4 item-price'>$ {parseFloat(detail.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-          <ItemCount />
+          <p>Stock: {detail.stock}</p>
+          <ItemCount detail={detail} />
         </div>
 
       </div>
