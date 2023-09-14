@@ -15,12 +15,12 @@ function ItemListContainer() {
     const itemsRef = collection(db, 'items')
     const getItems = async () => {
       const data = await getDocs(itemsRef)
-      const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      const dataFiltrada = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
       console.log(dataFiltrada)
       setList(dataFiltrada)
     }
-
     getItems()
+
   }, [params])
 
   return (

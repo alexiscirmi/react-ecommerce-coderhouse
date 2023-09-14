@@ -10,18 +10,6 @@ import { useEffect } from 'react'
 function App() {
 
   // Firebase
-  // Para obtener documento específico
-  const itemRef = doc(db, 'items',
-    'JY740xT5MfNvBJhyOdGk')
-  const getItem = () => {
-    getDoc(itemRef).then(snapshot => {
-      if (snapshot.exists()) {
-        // console.log(snapshot)
-        console.log({ id: snapshot.id, ...snapshot.data() })
-      }
-    })
-  }
-
   // Filtro
   const itemsRefFilter = query(
     collection(db, 'items'),
@@ -32,7 +20,7 @@ function App() {
 
   // Ejecuta la función
   useEffect(() => {
-    getItem()
+    // getItem()
   }, [])
 
   return (

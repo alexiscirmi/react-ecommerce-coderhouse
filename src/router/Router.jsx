@@ -14,7 +14,7 @@ function Router() {
       <CartContextComponent>
         <Navbar />
         <Routes>
-          <Route path='/' element={<ItemListContainer greeting='Hola mundo' />} />
+          <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:id' element={<ItemListContainer />} />
           <Route path='/item/:id' element={<ItemDetailContainer />} />
         </Routes>

@@ -15,20 +15,22 @@ function Navbar() {
         <ul className='collapse navbar-collapse navbar-nav col-md-4 order-2 order-md-0 justify-content-center gap-4 gap-md-0 my-3 my-md-0' id='navbarToggler'>
           <Link to='/' className={`nav-item nav-link px-3 ${styles.navLink}`}>Inicio</Link>
 
-          <Link to='/category/electronics' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Electrónica</Link>
-          <Link to='/category/jewelery' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Joyería</Link>
-          <Link to="/category/men's clothing" className={`d-md-none nav-item nav-link ${styles.navLink}`}>Ropa de hombre</Link>
-          <Link to="/category/women's clothing" className={`d-md-none nav-item nav-link ${styles.navLink}`}>Ropa de mujer</Link>
+          {/* Categories on smaller screens */}
+
+          <Link to='/category/celulares' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Celulares</Link>
+          <Link to='/category/computadoras' className={`d-md-none nav-item nav-link ${styles.navLink}`}>Computadoras</Link>
+          <Link to="/category/tablets" className={`d-md-none nav-item nav-link ${styles.navLink}`}>Tablets</Link>
+
+          {/* Categories on bigger screens */}
 
           <li className='nav-item dropdown d-none d-md-block'>
             <button className={`btn btn-dark dropdown-toggle nav-link px-3 ${styles.navLink}`} type='button' data-bs-toggle='dropdown' aria-expanded='false'>
               Categorías
             </button>
             <div className='dropdown-menu'>
-              <Link to='/category/electronics' className='dropdown-item'>Electrónica</Link>
-              <Link to='/category/jewelery' className='dropdown-item'>Joyería</Link>
-              <Link to="/category/men's clothing" className='dropdown-item'>Ropa de hombre</Link>
-              <Link to="/category/women's clothing" className='dropdown-item'>Ropa de mujer</Link>
+              <Link to='/category/celulares' className='dropdown-item'>Celulares</Link>
+              <Link to='/category/computadoras' className='dropdown-item'>Computadoras</Link>
+              <Link to="/category/tablets" className='dropdown-item'>Tablets</Link>
             </div>
           </li>
 
