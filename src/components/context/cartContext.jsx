@@ -1,21 +1,32 @@
 import { useState, createContext } from "react"
 
-export const CartContext = createContext()
+export const CartContext = createContext() // This context is used on CartWidget.jsx
 
-export function CartContextComponent({ children }) {
+export function CartContextComponent({ children }) { // This component is imported on Router.jsx
 
-  const [cartCount, setCartCount] = useState(0)
+  const [cart, setCart] = useState([])
 
-  const addCartCount = () => {
-    setCartCount(cartCount + 1)
+  // ELIMINAR //////////////
+  console.log(cart)
+
+  const isInCart = (itemId) => cart.some(item => item.id === itemId)
+
+  const addItem = (item, quantity) => {
+    isInCart(item)
+      ? setCart(quantity += 1)
+      : setCart([...cart, { ...item, quantity: 0 }])
   }
 
-  const subtractCartCount = () => {
-    cartCount > 0 && setCartCount(cartCount - 1)
+  const removeItem = (item) => {
+    cart > 0 && setCart(cart - 1)
+  }
+
+  const clear = () => {
+    setCart([])
   }
 
   return (
-    <CartContext.Provider value={{ cartCount, addCartCount, subtractCartCount }}>
+    <CartContext.Provider value={{ cart, isInCart, addItem, removeItem, clear }}>
       {children}
     </CartContext.Provider>
   )

@@ -6,19 +6,19 @@ function ItemCount({ detail }) {
 
   const [itemCount, setItemCount] = useState(0)
 
-  const { addCartCount, subtractCartCount } = useContext(CartContext)
+  const { addItem, subtractItem } = useContext(CartContext)
 
   const subtractItemCount = () => {
     if (itemCount > 0) {
       setItemCount(itemCount - 1)
-      subtractCartCount()
+      subtractItem()
     }
   }
 
   const addItemCount = () => {
     if (detail.stock > itemCount) {
       setItemCount(itemCount + 1)
-      addCartCount()
+      addItem()
     }
   }
 

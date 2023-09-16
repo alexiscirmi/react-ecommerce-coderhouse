@@ -21,10 +21,18 @@
   color: $color1;
 
   &:hover {
+    color: $color3;
+  }
+
+  &:focus {
     color: $color2;
   }
 }
 
 .navbarTogglerIcon {
   color: $color1;
+}
+
+.dropdownCustom:focus {
+  color: $color2;
 }
