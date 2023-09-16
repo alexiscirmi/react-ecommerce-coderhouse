@@ -18,19 +18,6 @@ function Navbar() {
           <Link to='/category/computadoras' className={` nav-item nav-link ${styles.navLink}`}>Computadoras</Link>
           <Link to="/category/tablets" className={` nav-item nav-link ${styles.navLink}`}>Tablets</Link>
 
-          {/* Categories on bigger screens */}
-
-          {/* <li className='nav-item dropdown d-none d-md-block'>
-            <button className={`btn btn-dark dropdown-toggle nav-link px-3 ${styles.navLink}`} type='button' data-bs-toggle='dropdown' aria-expanded='false'>
-              Categorías
-            </button>
-            <div className='dropdown-menu'>
-              <Link to='/category/celulares' className={`dropdown-item ${styles.dropdownCustom}`}>Celulares</Link>
-              <Link to='/category/computadoras' className={`dropdown-item ${styles.dropdownCustom}`}>Computadoras</Link>
-              <Link to="/category/tablets" className={`dropdown-item ${styles.dropdownCustom}`}>Tablets</Link>
-            </div>
-          </li> */}
-
         </ul>
 
         <div className='col-lg-4 text-center'>

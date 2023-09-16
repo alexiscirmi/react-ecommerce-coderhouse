@@ -6,9 +6,6 @@ export function CartContextComponent({ children }) { // This component is import
 
   const [cart, setCart] = useState([])
 
-  // ELIMINAR //////////////
-  console.log(cart)
-
   const isInCart = (itemId) => cart.some(item => item.id === itemId)
 
   const addItem = (item, quantity) => {
