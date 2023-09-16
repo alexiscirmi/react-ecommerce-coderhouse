@@ -10,16 +10,16 @@ import { CartContextComponent } from '../components/context/cartContext.jsx';
 
 function Router() {
   return (
-    <BrowserRouter>
-      <CartContextComponent>
+    <CartContextComponent>
+      <BrowserRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
         </Routes>
-      </CartContextComponent>
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartContextComponent>
   )
 }
 

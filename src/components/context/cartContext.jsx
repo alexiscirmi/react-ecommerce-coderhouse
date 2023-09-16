@@ -12,13 +12,15 @@ export function CartContextComponent({ children }) { // This component is import
   const isInCart = (itemId) => cart.some(item => item.id === itemId)
 
   const addItem = (item, quantity) => {
-    isInCart(item)
-      ? setCart(quantity += 1)
-      : setCart([...cart, { ...item, quantity: 0 }])
+    isInCart(item.id)
+      ? setCart(cart[cart.findIndex(itemId => itemId.id === item)].quantity = quantity)
+      : setCart([...cart, { ...item, quantity }])
   }
 
-  const removeItem = (item) => {
-    cart > 0 && setCart(cart - 1)
+  const removeItem = (itemId, quantity) => {
+    quantity >= 1
+      ? setCart(quantity - 1)
+      : setCart(cart.filter(item => item.id !== itemId))
   }
 
   const clear = () => {
