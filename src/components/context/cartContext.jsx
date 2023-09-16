@@ -6,6 +6,8 @@ export function CartContextComponent({ children }) { // This component is import
 
   const [cart, setCart] = useState([])
 
+  const cartWidgetAmount = cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)
+
   const isInCart = (itemId) => cart.some(item => item.id === itemId)
 
   const addItem = (item, quantity) => {
@@ -25,7 +27,7 @@ export function CartContextComponent({ children }) { // This component is import
   }
 
   return (
-    <CartContext.Provider value={{ cart, isInCart, addItem, removeItem, clear }}>
+    <CartContext.Provider value={{ cart, isInCart, addItem, removeItem, clear, cartWidgetAmount }}>
       {children}
     </CartContext.Provider>
   )
