@@ -12,8 +12,7 @@ function CartWidget() {
   return (
     <div className={styles.cartWidgetContainer}>
       <div className={styles.cartWidgetAmount}>
-        {/* {cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)} */}
-        {0}
+        {cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)}
       </div>
       <div>
         <CartFill className='fs-4' />
