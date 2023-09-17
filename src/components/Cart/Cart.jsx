@@ -10,6 +10,7 @@ function Cart() {
   if (cart.length > 0) {
     return (
       <div className={`pb-5 ${styles.cart}`}>
+        <h1 className='fs-4 mt-3'>Estado del carrito</h1>
         {
           cart.map((item) => {
             return (
