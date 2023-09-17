@@ -8,14 +8,37 @@ export function CartContextComponent({ children }) { // This component is import
 
   const cartWidgetAmount = cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)
 
+  const isInCart = (itemId) => cart.some(item => item.id === itemId)
+
   const addItem = (item, quantity) => {
-    setCart([...cart, { ...item, quantity }])
+    if (isInCart(item.id)) {
+      const updateCart = cart.map(itemId => {
+        if (itemId.id === item.id) {
+          if (itemId.stock > itemId.quantity) {
+            return { ...itemId, quantity: itemId.quantity + 1 }
+          } else {
+            return itemId
+          }
+        } else {
+          return itemId
+        }
+      })
+      setCart(updateCart)
+    } else {
+      setCart([...cart, { ...item, quantity }])
+    }
   }
 
   const removeItem = (item, quantity) => {
-    quantity >= 1
-      ? setCart([...cart.filter(itemId => itemId.id !== item.id), { ...item, quantity }])
-      : setCart(cart.filter(itemId => itemId.id !== item.id))
+    if (quantity > 1) {
+      const updateCart = cart.map(itemId => itemId.id === item.id
+        ? { ...itemId, quantity: itemId.quantity - 1 }
+        : itemId
+      )
+      setCart(updateCart)
+    } else {
+      setCart(cart.filter(itemId => itemId.id !== item.id))
+    }
   }
 
   const clear = () => {

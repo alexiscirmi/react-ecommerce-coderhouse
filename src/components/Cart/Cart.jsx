@@ -21,9 +21,9 @@ function Cart() {
                 <span className='d-none d-lg-block'>Precio: $ {item.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <span>Total: $ {(item.quantity * item.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <div className='minusDisplayPlus'>
-                  <button className={`btn btn-primary`} onClick={removeItem}>-</button>
+                  <button className={`btn btn-primary`} onClick={() => removeItem(item, item.quantity)}>-</button>
                   <span>{item.quantity}</span>
-                  <button className={`btn btn-primary`} onClick={addItem}>+</button>
+                  <button className={`btn btn-primary`} onClick={() => addItem(item, item.quantity)}>+</button>
                 </div>
 
               </div>
