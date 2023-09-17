@@ -15,12 +15,12 @@ function Cart() {
             return (
               <div key={item.id} className={styles.cartItem}>
                 <div className={styles.cartItemImage}>
-                  <img src={item.image} className={styles.img} />
+                  <img src={item.image} className={styles.img} alt={item.title} />
                 </div>
                 <span>{item.title}</span>
                 <span className='d-none d-lg-block'>Precio: $ {item.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <span>Total: $ {(item.quantity * item.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                <div>
+                <div className='minusDisplayPlus'>
                   <button className={`btn btn-primary`} onClick={removeItem}>-</button>
                   <span>{item.quantity}</span>
                   <button className={`btn btn-primary`} onClick={addItem}>+</button>

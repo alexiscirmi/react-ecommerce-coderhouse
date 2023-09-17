@@ -34,3 +34,16 @@ a {
     background-color: $color2;
   }
 }
+
+.minusDisplayPlus {
+  & .btn-primary {
+    width: 36px;
+    height: 40px;
+  }
+
+  & span {
+    display: inline-block;
+    text-align: center;
+    width: 35px;
+  }
+}

@@ -8,12 +8,8 @@ export function CartContextComponent({ children }) { // This component is import
 
   const cartWidgetAmount = cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)
 
-  const isInCart = (itemId) => cart.some(item => item.id === itemId)
-
   const addItem = (item, quantity) => {
-    isInCart(item.id)
-      ? setCart([...cart.filter(itemId => itemId.id !== item.id), { ...item, quantity }])
-      : setCart([...cart, { ...item, quantity }])
+    setCart([...cart, { ...item, quantity }])
   }
 
   const removeItem = (item, quantity) => {
@@ -27,7 +23,7 @@ export function CartContextComponent({ children }) { // This component is import
   }
 
   return (
-    <CartContext.Provider value={{ cart, isInCart, addItem, removeItem, clear, cartWidgetAmount }}>
+    <CartContext.Provider value={{ cart, addItem, removeItem, clear, cartWidgetAmount }}>
       {children}
     </CartContext.Provider>
   )

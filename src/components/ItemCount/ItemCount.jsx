@@ -37,10 +37,12 @@ function ItemCount({ detail }) {
   }
 
   return (
-    <div>
-      <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={subtractCount}>-</button>
-      <span className={styles.amountCounter}>{count}</span>
-      <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={addCount}>+</button>
+    <div className='d-flex justify-content-center justify-content-md-end'>
+      <div className='minusDisplayPlus'>
+        <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={subtractCount}>-</button>
+        <span>{count}</span>
+        <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={addCount}>+</button>
+      </div>
 
       {finishButton
         ? (
