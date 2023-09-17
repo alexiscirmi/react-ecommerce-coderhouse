@@ -20,7 +20,7 @@ function Cart() {
                 <span>{item.title}</span>
                 <span className='d-none d-lg-block'>Precio: $ {item.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <span>Total: $ {(item.quantity * item.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                <div className='minusDisplayPlus'>
+                <div className='minusDisplayPlus d-flex flex-column d-md-block'>
                   <button className={`btn btn-primary`} onClick={() => removeItem(item, item.quantity)}>-</button>
                   <span>{item.quantity}</span>
                   <button className={`btn btn-primary`} onClick={() => addItem(item, item.quantity)}>+</button>
