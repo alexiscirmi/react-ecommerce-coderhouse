@@ -1,39 +1,59 @@
 import { useState, useContext, useEffect } from 'react'
 import { CartContext } from '../context/cartContext'
+import { Link } from 'react-router-dom'
 import styles from './ItemCount.module.scss'
 
 function ItemCount({ detail }) {
 
-  const { cart, addItem, removeItem } = useContext(CartContext)
+  const { cart, addItem } = useContext(CartContext)
 
   const [count, setCount] = useState(0)
 
+  const [finishButton, setFinishButton] = useState(false)
+
   useEffect(() => {
     const itemInCart = cart.find(item => item.id === detail.id)
-    itemInCart && setCount(itemInCart.quantity)
+    if (itemInCart) {
+      setCount(itemInCart.quantity)
+      setFinishButton(true)
+    }
   }, [cart, detail.id])
 
   const subtractCount = () => {
     if (count > 0) {
       setCount(count - 1)
-      removeItem(detail, count - 1)
     }
   }
 
   const addCount = () => {
     if (detail.stock > count) {
       setCount(count + 1)
-      addItem(detail, count + 1)
     }
+  }
+
+  const addToCart = () => {
+    addItem(detail, count)
+    setFinishButton(true)
   }
 
   return (
     <div>
-      <button className='btn btn-primary' onClick={subtractCount}>-</button>
+      <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={subtractCount}>-</button>
       <span className={styles.amountCounter}>{count}</span>
-      <button className='btn btn-primary' onClick={addCount}>+</button>
+      <button className={`btn btn-primary ${finishButton && 'disabled'}`} onClick={addCount}>+</button>
+
+      {finishButton
+        ? (
+          <Link to='/cart' className={`btn btn-primary ${styles.addFinishButtons} ms-3 ${count === 0 && 'disabled'}`}>Terminar mi compra</Link>
+        )
+        : (
+          <button className={`btn btn-primary ${styles.addFinishButtons} ms-3 ${count === 0 && 'disabled'}`} onClick={addToCart}>Agregar al carrito</button>
+        )
+      }
+
     </div>
   )
+
 }
 
 export default ItemCount

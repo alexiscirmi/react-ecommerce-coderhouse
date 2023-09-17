@@ -6,20 +6,23 @@ import { Link } from 'react-router-dom'
 
 function CartWidget() {
 
-  // This component shows a cart icon, takes the cart array from CartContext and renders its length
+  // This component shows a cart icon, takes the cartWidgetAmount value from cartContext.jsx and renders it
 
   const { cartWidgetAmount } = useContext(CartContext)
 
-  return (
-    <Link to='/cart' className={styles.cartWidgetContainer}>
-      <div className={styles.cartWidgetAmount}>
-        {cartWidgetAmount}
-      </div>
-      <div>
-        <CartFill className='fs-4' />
-      </div>
-    </Link >
-  )
+  if (cartWidgetAmount > 0) {
+    return (
+      <Link to='/cart' className={styles.cartWidgetContainer}>
+        <div className={styles.cartWidgetAmount}>
+          {cartWidgetAmount}
+        </div>
+        <div>
+          <CartFill className='fs-4' />
+        </div>
+      </Link >
+    )
+  }
+
 }
 
 export default CartWidget
