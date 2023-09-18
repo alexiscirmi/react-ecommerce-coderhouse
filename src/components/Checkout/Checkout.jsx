@@ -34,7 +34,7 @@ function Checkout() {
       const order = {
         buyer: { name: name, phone: phone, email: email },
         items: cart.map(item => {
-          return { id: item.id, title: item.title, price: item.price }
+          return { id: item.id, title: item.title, price: item.price, quantity: item.quantity }
         }),
         date: new Date(),
         total: cart.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity * currentValue.price), 0)
