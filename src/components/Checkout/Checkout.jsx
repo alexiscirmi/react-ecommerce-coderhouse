@@ -7,7 +7,7 @@ import styles from './Checkout.module.scss'
 function Checkout() {
   const { cart, clear } = useContext(CartContext)
 
-  // const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const [name, setName] = useState('')
   const handleName = (e) => {
@@ -26,9 +26,9 @@ function Checkout() {
 
   const [orderId, setOrderId] = useState(undefined)
 
-  const sendOrder = (e) => {
+  const sendOrder = async (e) => {
     e.preventDefault()
-    // setLoading(true)
+    setLoading(true)
 
     if (cart.length > 0) {
       const order = {
@@ -44,47 +44,63 @@ function Checkout() {
 
       const ordersCollection = collection(db, 'orders')
 
-      addDoc(ordersCollection, order)
-        .then(({ id }) => setOrderId(id))
-      clear()
+      try {
+        const { id } = await addDoc(ordersCollection, order)
+        setOrderId(id)
+        clear()
+        setLoading(false)
+      } catch (error) {
+        console.error('No se pudo crear el pedido.')
+      }
     }
   }
 
-  return (
-    <div className={styles.checkout}>
-      <h1 className='fs-4 mt-3'>Finalizar compra</h1>
-      <form action='' className={`mt-4 ${styles.form}`}>
+  if (!loading && !orderId) {
+    return (
+      <div className={styles.checkout}>
+        <h1 className='fs-4 mt-3'>Finalizar compra</h1>
+        <form action='' className={`mt-4 ${styles.form}`}>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='nombre'>Nombre</label>
-          <input className='form-control' type='text' id='nombre' placeholder='Lionel Andrés Messi' required onChange={handleName} />
-        </fieldset>
+          <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
+            <label htmlFor='nombre'>Nombre</label>
+            <input className='form-control' type='text' id='nombre' placeholder='Linus Torvalds' required onChange={handleName} />
+          </fieldset>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='telefono'>Teléfono</label>
-          <input className='form-control' type='tel' id='telefono' maxLength='12' placeholder='541123456789' required onChange={handlePhone} />
-        </fieldset>
+          <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
+            <label htmlFor='telefono'>Teléfono</label>
+            <input className='form-control' type='tel' id='telefono' maxLength='12' placeholder='541123456789' required onChange={handlePhone} />
+          </fieldset>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='email'>Email</label>
-          <input className='form-control' type='email' id='email' placeholder='linustorvalds@outlook.com' required onChange={handleEmail} />
-        </fieldset>
+          <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
+            <label htmlFor='email'>Email</label>
+            <input className='form-control' type='email' id='email' placeholder='linustorvalds@outlook.com' required onChange={handleEmail} />
+          </fieldset>
 
-        <div className='d-flex justify-content-center'>
-          <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Realizar pedido</button>
-        </div>
-
-        {/* <Loader /> */}
-
-        {orderId && (
-          <div className='mt-4'>
-            <p>Order ID: {orderId}</p>
+          <div className='d-flex justify-content-center'>
+            <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>
           </div>
+
+        </form>
+
+      </div>
+    );
+  } else {
+    return (
+      <>
+        {loading && (
+          <Loader message={'Creando orden...'} />
         )}
 
-      </form>
-    </div>
-  );
+        {
+          orderId && (
+            <div className='d-flex h-100 justify-content-center align-items-center fs-4'>
+              <p>Orden creada - ID: {orderId}</p>
+            </div>
+          )
+        }
+      </>
+    )
+  }
 }
 
 export default Checkout;

@@ -32,7 +32,7 @@ function ItemListContainer() {
 
   if (loading) {
     return (
-      <Loader />
+      <Loader message={'Cargando catálogo...'} />
     )
   } else {
     return (

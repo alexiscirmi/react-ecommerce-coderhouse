@@ -29,7 +29,7 @@ function ItemDetailContainer() {
 
   if (loading) {
     return (
-      <Loader />
+      <Loader message={'Cargando producto...'} />
     )
   } else {
     return (
