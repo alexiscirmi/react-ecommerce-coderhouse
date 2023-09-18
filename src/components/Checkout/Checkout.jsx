@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../context/cartContext'
-import { collection, getFirestore } from 'firebase/firestore'
+import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import styles from './Checkout.module.scss'
 
 function Checkout() {
 
-  const { cart } = useContext(CartContext)
+  const { cart, clear } = useContext(CartContext)
 
   const [name, setName] = useState('')
   const handleName = (e) => {
@@ -22,15 +22,26 @@ function Checkout() {
     setEmail(e.target.value)
   }
 
-  const sendOrder = () => {
+  const [orderId, setOrderId] = useState(undefined)
+
+  const sendOrder = (e) => {
+    e.preventDefault()
     const order = {
       buyer: { name: name, phone: phone, email: email },
-      items: cart,
+      items: cart.map(item => {
+        return { id: item.id, title: item.title, price: item.price }
+      }),
+      date: new Date(),
       total: cart.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity * currentValue.price), 0)
     }
+
     const db = getFirestore()
 
     const ordersCollection = collection(db, 'orders')
+
+    addDoc(ordersCollection, order).then(({ id }) => setOrderId(id))
+
+    clear()
   }
 
   return (
@@ -54,8 +65,14 @@ function Checkout() {
         </fieldset>
 
         <div className='d-flex justify-content-center'>
-          <button type='submit' className='btn btn-primary mt-4' onSubmit={sendOrder}>Realizar pedido</button>
+          <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Realizar pedido</button>
         </div>
+
+        {orderId && (
+          <div className='mt-4'>
+            <p>Order ID: {orderId}</p>
+          </div>
+        )}
 
       </form>
     </div>
