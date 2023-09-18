@@ -20,7 +20,7 @@ function Cart() {
                 </div>
                 <span>{item.title}</span>
                 <span className='d-none d-lg-block'>Precio: $ {item.price.toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
-                <span>Total: $ {(item.quantity * item.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                <span>Subtotal: $ {(item.quantity * item.price).toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                 <div className='minusDisplayPlus d-flex flex-column d-md-block'>
                   <button className={`btn btn-primary`} onClick={() => removeItem(item, item.quantity)}>-</button>
                   <span>{item.quantity}</span>
@@ -32,9 +32,15 @@ function Cart() {
           })
         }
 
-        <div className='d-flex gap-3 justify-content-center mt-4'>
-          <button className='btn btn-primary' onClick={clear}>Limpiar carrito</button>
-          <Link to='/checkout' className='btn btn-primary'>Continuar</Link>
+        <div className='mt-2'>
+          <h2 className='fs-5'>Total: $ {(
+            cart.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity * currentValue.price), 0))
+            .toLocaleString("es-AR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+          }</h2>
+          <div className='d-flex gap-3 justify-content-center mt-4'>
+            <button className='btn btn-primary' onClick={clear}>Limpiar carrito</button>
+            <Link to='/checkout' className='btn btn-primary'>Continuar</Link>
+          </div>
         </div>
       </div>
     )
