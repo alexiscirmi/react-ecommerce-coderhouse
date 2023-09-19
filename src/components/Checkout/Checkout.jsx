@@ -9,17 +9,17 @@ function Checkout() {
 
   const [loading, setLoading] = useState(false)
 
-  const [name, setName] = useState('')
+  const [name, setName] = useState(undefined)
   const handleName = (e) => {
     setName(e.target.value)
   }
 
-  const [phone, setPhone] = useState()
+  const [phone, setPhone] = useState(undefined)
   const handlePhone = (e) => {
     setPhone(e.target.value)
   }
 
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(undefined)
   const handleEmail = (e) => {
     setEmail(e.target.value)
   }
@@ -27,39 +27,47 @@ function Checkout() {
   const [orderId, setOrderId] = useState(undefined)
 
   const sendOrder = async (e) => {
-    e.preventDefault()
-    setLoading(true)
 
-    if (cart.length > 0) {
-      const order = {
-        buyer: { name: name, phone: phone, email: email },
-        items: cart.map(item => {
-          return { id: item.id, title: item.title, price: item.price, quantity: item.quantity }
-        }),
-        date: new Date(),
-        total: cart.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity * currentValue.price), 0)
+    if (name && phone && phone.length === 12 && parseInt(phone) && email && email.includes('@')) {
+      e.preventDefault()
+      setLoading(true)
+
+      if (cart.length > 0) {
+        const order = {
+          buyer: { name: name, phone: phone, email: email },
+          items: cart.map(item => {
+            return { id: item.id, title: item.title, price: item.price, quantity: item.quantity }
+          }),
+          date: new Date(),
+          total: cart.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity * currentValue.price), 0)
+        }
+
+        const db = getFirestore()
+
+        const ordersCollection = collection(db, 'orders')
+
+        try {
+          const { id } = await addDoc(ordersCollection, order)
+          setOrderId(id)
+          clear()
+          setLoading(false)
+        } catch (error) {
+          console.error('No se pudo crear la orden.')
+          setLoading(false)
+        }
       }
-
-      const db = getFirestore()
-
-      const ordersCollection = collection(db, 'orders')
-
-      try {
-        const { id } = await addDoc(ordersCollection, order)
-        setOrderId(id)
-        clear()
-        setLoading(false)
-      } catch (error) {
-        console.error('No se pudo crear el pedido.')
-      }
+    } else {
+      console.error('No se pudo crear la orden. Completar todos los campos requeridos.')
     }
   }
+
 
   if (!loading && !orderId) {
     return (
       <div className={styles.checkout}>
         <h1 className='fs-4 mt-3'>Finalizar compra</h1>
-        <form action='' className={`mt-4 ${styles.form}`}>
+        <p className='mt-4 mx-4 text-center balance'>Complete el formulario con sus datos. Todos los campos son requeridos.</p>
+        <form action='' className={`mt-1 ${styles.form}`}>
 
           <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
             <label htmlFor='nombre'>Nombre</label>
@@ -67,8 +75,8 @@ function Checkout() {
           </fieldset>
 
           <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-            <label htmlFor='telefono'>Teléfono</label>
-            <input className='form-control' type='tel' id='telefono' maxLength='12' placeholder='541123456789' required onChange={handlePhone} />
+            <label htmlFor='telefono'>Teléfono (12 dígitos)</label>
+            <input className='form-control' type='tel' id='telefono' minLength='12' maxLength='12' placeholder='541123456789' required onChange={handlePhone} />
           </fieldset>
 
           <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
@@ -77,11 +85,10 @@ function Checkout() {
           </fieldset>
 
           <div className='d-flex justify-content-center'>
-            <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>
+            <button type='button' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>
           </div>
 
         </form>
-
       </div>
     )
   } else {
