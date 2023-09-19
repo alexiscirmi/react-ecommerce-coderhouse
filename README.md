@@ -9,7 +9,7 @@ Este proyecto fue creado usando [Create React App](https://github.com/facebook/c
 Instala [Node.js](https://nodejs.org/) en tu sistema operativo.
 
 ### 2) Descarga y navega al directorio
-[Descarga el proyecto](https://github.com/cirmialexis/coderhouse-react-project/archive/refs/heads/main.zip), descomprímelo y navega al directorio con la terminal o consola usando `cd /ruta/del/proyecto`.
+[Descarga el proyecto](https://github.com/cirmialexis/coderhouse-react-project/archive/refs/heads/main.zip), descomprímelo y navega al directorio con la terminal o consola usando `cd /ruta/del/proyecto`. También se puede clonar o abrir con GitHub Desktop.
 
 ### 3) Instala los módulos necesarios
 Para poder inicializar el proyecto, primero hay que instalar los módulos de Node.js necesarios con `npm install`.
