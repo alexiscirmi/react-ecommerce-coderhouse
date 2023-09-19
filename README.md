@@ -1,5 +1,5 @@
 # TECNOW - ReactJS App
-##
+
 TECNOW es una tienda ficticia de teléfonos celulares, laptops y tablets.
 Este proyecto fue creado usando [Create React App](https://github.com/facebook/create-react-app) para el [curso de ReactJS de Coderhouse](https://www.coderhouse.com/online/reactjs).
 
@@ -22,7 +22,7 @@ Puedes aprender más en la [documentación de Create React App documentation](ht
 
 Para aprender React, [mira la documentación](https://reactjs.org/).
 
-##
+
 ## Sobre la app
 
 ### Barra de navegación
