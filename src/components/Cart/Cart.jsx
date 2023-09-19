@@ -1,6 +1,6 @@
 import { useContext } from 'react'
-import { CartContext } from '../context/cartContext';
-import { Link } from 'react-router-dom';
+import { CartContext } from '../context/cartContext'
+import { Link } from 'react-router-dom'
 import styles from './Cart.module.scss'
 
 function Cart() {
@@ -53,7 +53,6 @@ function Cart() {
     )
   }
 
-
 }
 
-export default Cart;
+export default Cart

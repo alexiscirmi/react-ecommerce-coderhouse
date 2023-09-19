@@ -7,4 +7,4 @@ function Loader({ message }) {
   )
 }
 
-export default Loader;
+export default Loader

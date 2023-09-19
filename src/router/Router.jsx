@@ -2,17 +2,16 @@ import {
   BrowserRouter,
   Routes,
   Route
-} from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar.jsx';
-import ItemListContainer from '../containers/ItemListContainer/ItemListContainer';
+} from 'react-router-dom'
+import Navbar from '../components/Navbar/Navbar.jsx'
+import ItemListContainer from '../containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer.jsx'
 import Cart from '../components/Cart/Cart.jsx'
 import Checkout from '../components/Checkout/Checkout.jsx'
-import { CartContextComponent } from '../components/context/cartContext.jsx';
+import { CartContextComponent } from '../components/context/cartContext.jsx'
 
 function Router() {
   return (
-
     <BrowserRouter>
       <CartContextComponent>
         <Navbar />
@@ -28,4 +27,4 @@ function Router() {
   )
 }
 
-export default Router;
+export default Router

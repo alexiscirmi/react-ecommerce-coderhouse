@@ -83,7 +83,7 @@ function Checkout() {
         </form>
 
       </div>
-    );
+    )
   } else {
     return (
       <>
@@ -103,4 +103,4 @@ function Checkout() {
   }
 }
 
-export default Checkout;
+export default Checkout

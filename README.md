@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# TECNOW - ReactJS App
+##
+TECNOW es una tienda ficticia de teléfonos celulares, laptops y tablets.
+Este proyecto fue creado usando [Create React App](https://github.com/facebook/create-react-app) para el [curso de ReactJS de Coderhouse](https://www.coderhouse.com/online/reactjs).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instrucciones para inicializar el proyecto
 
-## Available Scripts
+### 1) Descargar Node.js
+Instala [Node.js](https://nodejs.org/) en tu sistema operativo.
 
-In the project directory, you can run:
+### 2) Descarga y navega al directorio
+[Descarga el proyecto](https://github.com/cirmialexis/coderhouse-react-project/archive/refs/heads/main.zip), descomprímelo y navega al directorio con la terminal o consola usando `cd /ruta/del/proyecto`.
 
-### `npm start`
+### 3) Instala los módulos necesarios
+Para poder inicializar el proyecto, primero hay que instalar los módulos de Node.js necesarios con `npm install`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 4) Inicializa el proyecto
+Una vez instalados los módulos, usa el comando `npm start` para inicializar la app en modo de desarrollo, pudiendo visualizarla y probarla en [http://localhost:3000](http://localhost:3000).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Aprende más
+Puedes aprender más en la [documentación de Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### `npm test`
+Para aprender React, [mira la documentación](https://reactjs.org/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##
+## Sobre la app
 
-### `npm run build`
+### Barra de navegación
+La app cuenta con una barra de navegación que muestra el logo de la marca, un selector de categoría de productos y el ícono de un carrito que aparece al agregar algún producto. La página muestra por defecto todos los productos, y siempre se puede acceder a esta vista por defecto haciendo clic en el logo de TECNOW.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Agregar productos al carrito
+Al ingresar al detalle de algún producto, se puede seleccionar la cantidad de productos deseados y luego hacer clic en "Agregar al carrito". Automáticamente, aparece en su lugar el botón "Terminar mi compra", que llevará al usuario a la sección de revisión del estado del carrito. También se puede acceder a dicha sección haciendo clic en el ícono de carrito que aparece en la barra de navegación. Por supuesto, se pueden agregar más productos antes de revisar el carrito y terminar la compra.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Estado del carrito
+Al revisar el carrito, se pueden ver los datos de los productos elegidos, con los subtotales correspodientes y el total a pagar. Se pueden quitar o agregar más unidades de cada producto desde aquí mismo, e incluso hay un botón para limpiar el carrito. Con el botón "Continuar" se accede al formulario final.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Checkout
+Aquí, el comprador completa el formulario con su nombre, número de teléfono y correo electrónico. Al hacer clic en "Crear orden" se genera el pedido, se envía al vendedor y se muestra al comprador el número de referencia del mismo.

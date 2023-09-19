@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { collection, getDocs, orderBy, limit, query, where } from 'firebase/firestore'
+import { collection, getDocs, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../../firebase/client'
 import ItemList from '../../components/ItemList/ItemList'
 import Loader from '../../components/Loader/Loader'
