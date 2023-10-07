@@ -37,4 +37,4 @@ Al revisar el carrito, se pueden ver los datos de los productos elegidos, con lo
 ### Checkout
 Aquí, el comprador completa el formulario con su nombre, número de teléfono y correo electrónico. Al hacer clic en "Crear orden" se genera el pedido, se envía al vendedor y se muestra al comprador el número de referencia del mismo.
 
-![Certificado ReactJS](https://github.com/cirmialexis/coderhouse-react-project/assets/1320538/4705dcca-fc8f-4c60-8409-13902a5e6c07)
+![Coderhouse_React_certificado](https://github.com/cirmialexis/coderhouse-react-project/assets/1320538/a8d142e8-265d-48e8-ab28-f3e29819384b)
