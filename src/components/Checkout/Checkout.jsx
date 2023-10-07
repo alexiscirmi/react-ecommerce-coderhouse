@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { CartContext } from '../context/cartContext'
+import { CartContext } from '../../context/cartContext'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import Loader from '../Loader/Loader'
 import styles from './Checkout.module.scss'

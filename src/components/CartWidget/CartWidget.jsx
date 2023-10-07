@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { CartFill } from 'react-bootstrap-icons'
-import { CartContext } from '../context/cartContext'
+import { CartContext } from '../../context/cartContext'
 import styles from './CartWidget.module.scss'
 import { Link } from 'react-router-dom'
 

@@ -8,21 +8,21 @@ import ItemListContainer from '../containers/ItemListContainer/ItemListContainer
 import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer.jsx'
 import Cart from '../components/Cart/Cart.jsx'
 import Checkout from '../components/Checkout/Checkout.jsx'
-import { CartContextComponent } from '../components/context/cartContext.jsx'
+import { CartProvider } from '../context/cartContext.jsx'
 
 function Router() {
   return (
     <BrowserRouter>
-      <CartContextComponent>
+      <CartProvider>
         <Navbar />
         <Routes>
-          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/coderhouse-react-project' element={<ItemListContainer />} />
           <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/checkout' element={<Checkout />} />
         </Routes>
-      </CartContextComponent>
+      </CartProvider>
     </BrowserRouter>
   )
 }

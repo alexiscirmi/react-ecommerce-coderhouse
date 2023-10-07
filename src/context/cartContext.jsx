@@ -2,7 +2,7 @@ import { useState, createContext } from 'react'
 
 export const CartContext = createContext() // This context is used on CartWidget.jsx & Cart.jsx
 
-export function CartContextComponent({ children }) { // This component is imported on Router.jsx
+export function CartProvider({ children }) { // This component is imported on Router.jsx
 
   const [cart, setCart] = useState([])
 

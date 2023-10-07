@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { CartContext } from '../context/cartContext'
+import { CartContext } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
 import styles from './Cart.module.scss'
 
@@ -48,7 +48,7 @@ function Cart() {
     return (
       <div className='d-flex flex-column align-items-center justify-content-center text-center h-100'>
         <h1 className='fs-4'>No hay ítems en el carrito</h1>
-        <Link to='/' className='btn btn-primary mt-5'>Volver al inicio</Link>
+        <Link to='/coderhouse-react-project' className='btn btn-primary mt-5'>Volver al inicio</Link>
       </div>
     )
   }
