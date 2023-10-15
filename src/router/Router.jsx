@@ -17,10 +17,10 @@ function Router() {
         <Navbar />
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
-          <Route path='/coderhouse-react-project/category/:categoryId' element={<ItemListContainer />} />
-          <Route path='/coderhouse-react-project/item/:itemId' element={<ItemDetailContainer />} />
-          <Route path='/coderhouse-react-project/cart' element={<Cart />} />
-          <Route path='/coderhouse-react-project/checkout' element={<Checkout />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </CartProvider>
     </HashRouter>

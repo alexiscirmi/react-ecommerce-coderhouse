@@ -21,7 +21,7 @@ function Cart() {
           }</h2>
           <div className='d-flex gap-3 justify-content-center mt-4'>
             <button className='btn btn-primary' onClick={clear}>Limpiar carrito</button>
-            <Link to='/coderhouse-react-project/checkout' className='btn btn-primary'>Continuar</Link>
+            <Link to='/checkout' className='btn btn-primary'>Continuar</Link>
           </div>
         </div>
       </div>
@@ -30,7 +30,7 @@ function Cart() {
     return (
       <div className='d-flex flex-column align-items-center justify-content-center text-center h-100'>
         <h1 className='fs-4'>No hay ítems en el carrito</h1>
-        <Link to='/coderhouse-react-project' className='btn btn-primary mt-5'>Volver al inicio</Link>
+        <Link to='/' className='btn btn-primary mt-5'>Volver al inicio</Link>
       </div>
     )
   }

@@ -12,7 +12,7 @@ function CartWidget() {
 
   if (cartWidgetAmount > 0) {
     return (
-      <Link to='/coderhouse-react-project/cart' className={styles.cartWidgetContainer}>
+      <Link to='/cart' className={styles.cartWidgetContainer}>
         <div className={styles.cartWidgetAmount}>
           {cartWidgetAmount}
         </div>
