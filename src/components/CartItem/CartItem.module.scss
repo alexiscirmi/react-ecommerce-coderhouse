@@ -16,12 +16,26 @@
 }
 
 .cartItemImage {
+  padding: 0;
   text-align: center;
-  max-height: 200px;
-  width: 150px;
+  width: 100px;
+
+  @media (min-width: 576px) {
+    & {
+      width: 200px;
+    }
+  }
 }
 
 .img {
-  max-height: 200px;
-  max-width: 150px;
+  padding: 0;
+  max-height: 100px;
+  max-width: 100px;
+
+  @media (min-width: 576px) {
+    & {
+      max-height: 200px;
+      max-width: 200px;
+    }
+  }
 }
