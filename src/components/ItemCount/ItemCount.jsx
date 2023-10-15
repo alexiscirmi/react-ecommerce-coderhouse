@@ -46,7 +46,7 @@ function ItemCount({ detail }) {
 
       {finishButton
         ? (
-          <Link to='/cart' className={`btn btn-primary ${styles.addFinishButtons} ms-3 ${count === 0 && 'disabled'}`}>Terminar mi compra</Link>
+          <Link to='/coderhouse-react-project/cart' className={`btn btn-primary ${styles.addFinishButtons} ms-3 ${count === 0 && 'disabled'}`}>Terminar mi compra</Link>
         )
         : (
           <button className={`btn btn-primary ${styles.addFinishButtons} ms-3 ${count === 0 && 'disabled'}`} onClick={addToCart}>Agregar al carrito</button>

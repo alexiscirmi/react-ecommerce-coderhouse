@@ -21,7 +21,7 @@ function Cart() {
           }</h2>
           <div className='d-flex gap-3 justify-content-center mt-4'>
             <button className='btn btn-primary' onClick={clear}>Limpiar carrito</button>
-            <Link to='/checkout' className='btn btn-primary'>Continuar</Link>
+            <Link to='/coderhouse-react-project/checkout' className='btn btn-primary'>Continuar</Link>
           </div>
         </div>
       </div>

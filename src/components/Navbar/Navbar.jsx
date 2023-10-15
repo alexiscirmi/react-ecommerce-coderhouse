@@ -14,9 +14,9 @@ function Navbar() {
 
         <ul className='collapse navbar-collapse navbar-nav col-lg-4 order-2 order-lg-0 justify-content-center gap-4 gap-lg-1 my-3 my-lg-0' id='navbarToggler'>
 
-          <Link to='/category/celulares' className={` nav-item nav-link ${styles.navLink}`}>Celulares</Link>
-          <Link to='/category/computadoras' className={` nav-item nav-link ${styles.navLink}`}>Computadoras</Link>
-          <Link to="/category/tablets" className={` nav-item nav-link ${styles.navLink}`}>Tablets</Link>
+          <Link to='/coderhouse-react-project/category/celulares' className={` nav-item nav-link ${styles.navLink}`}>Celulares</Link>
+          <Link to='/coderhouse-react-project/category/computadoras' className={` nav-item nav-link ${styles.navLink}`}>Computadoras</Link>
+          <Link to="/coderhouse-react-project/category/tablets" className={` nav-item nav-link ${styles.navLink}`}>Tablets</Link>
 
         </ul>
 

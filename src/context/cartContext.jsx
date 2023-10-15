@@ -1,10 +1,14 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 
 export const CartContext = createContext() // This context is used on CartWidget.jsx & Cart.jsx
 
 export function CartProvider({ children }) { // This component is imported on Router.jsx
 
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || [])
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   const cartWidgetAmount = cart.reduce((accumulator, currentValue) => accumulator + currentValue.quantity, 0)
 
