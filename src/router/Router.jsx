@@ -16,7 +16,7 @@ function Router() {
       <CartProvider>
         <Navbar />
         <Routes>
-          <Route path='/coderhouse-react-project' element={<ItemListContainer />} />
+          <Route path='/' element={<ItemListContainer />} />
           <Route path='/coderhouse-react-project/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/coderhouse-react-project/item/:itemId' element={<ItemDetailContainer />} />
           <Route path='/coderhouse-react-project/cart' element={<Cart />} />

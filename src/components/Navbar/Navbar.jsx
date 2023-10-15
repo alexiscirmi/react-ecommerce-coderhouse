@@ -21,7 +21,7 @@ function Navbar() {
         </ul>
 
         <div className='col-lg-4 text-center'>
-          <Link to='/coderhouse-react-project' className={`navbar-brand d-inline-flex text-decoration-none py-0 mx-0 ${styles.navbarBrand}`}>TECNOW</Link>
+          <Link to='/' className={`navbar-brand d-inline-flex text-decoration-none py-0 mx-0 ${styles.navbarBrand}`}>TECNOW</Link>
         </div>
 
         <div className='col-lg-4 text-center d-flex justify-content-center'>
