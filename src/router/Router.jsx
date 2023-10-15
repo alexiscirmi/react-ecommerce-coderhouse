@@ -1,5 +1,5 @@
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route
 } from 'react-router-dom'
@@ -12,7 +12,7 @@ import { CartProvider } from '../context/cartContext.jsx'
 
 function Router() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartProvider>
         <Navbar />
         <Routes>
@@ -23,7 +23,7 @@ function Router() {
           <Route path='/coderhouse-react-project/checkout' element={<Checkout />} />
         </Routes>
       </CartProvider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
