@@ -82,7 +82,7 @@ function Checkout() {
 
         {
           orderId && (
-            <div className='d-flex h-100 justify-content-center align-items-center fs-4'>
+            <div className='d-flex h-100 justify-content-center align-items-center text-center balance fs-4'>
               <p>Orden creada - ID: {orderId}</p>
             </div>
           )
