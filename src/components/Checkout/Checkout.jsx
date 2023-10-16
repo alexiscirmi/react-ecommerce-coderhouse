@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/cartContext'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
+import { addDoc, collection, getFirestore, doc, updateDoc } from 'firebase/firestore'
 import Loader from '../Loader/Loader'
 
 function Checkout() {
@@ -49,6 +49,14 @@ function Checkout() {
         try {
           const { id } = await addDoc(ordersCollection, order)
           setOrderId(id)
+
+          // Update item stock
+          const itemsCollection = collection(db, 'items')
+          cart.forEach(async (item) => {
+            const itemRef = doc(itemsCollection, item.id)
+            await updateDoc(itemRef, { stock: item.stock - item.quantity })
+          })
+
           clear()
           setLoading(false)
         } catch (error) {
