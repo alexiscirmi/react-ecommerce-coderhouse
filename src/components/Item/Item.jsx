@@ -12,7 +12,10 @@ function Item({ item }) {
           <h5 className='card-title'>{item.title}</h5>
           <div className='border-top'>
             <p className={`card-text fs-4 mt-2 mb-3 ${styles.itemPrice}`}>$ {item.price.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-            <Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>
+            {item.stock === 0
+              ? (<Link to={`/item/${item.id}`} className='btn btn-primary disabled'>Sin stock</Link>)
+              : (<Link to={`/item/${item.id}`} className='btn btn-primary'>Ver descripción</Link>)
+            }
           </div>
         </div>
       </div>
