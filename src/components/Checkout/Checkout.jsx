@@ -28,7 +28,7 @@ function Checkout() {
 
   const sendOrder = async (e) => {
 
-    if (name && phone && phone.length === 12 && parseInt(phone) && email && email.includes('@')) {
+    if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@')) {
       e.preventDefault()
       setLoading(true)
 

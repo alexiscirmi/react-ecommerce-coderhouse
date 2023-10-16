@@ -8,23 +8,23 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, sendOrder }) {
       <p className='mt-4 mx-4 text-center balance'>Complete el formulario con sus datos. Todos los campos son requeridos.</p>
       <form action='' className={`mt-1 ${styles.form}`}>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='nombre'>Nombre</label>
+        <fieldset className='d-flex flex-column justify-content-center gap-2 my-4'>
+          <label className='form-label' htmlFor='nombre'>Nombre</label>
           <input className='form-control' type='text' id='nombre' placeholder='Linus Torvalds' required onChange={handleName} />
         </fieldset>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='telefono'>Teléfono (12 dígitos)</label>
-          <input className='form-control' type='tel' id='telefono' minLength='12' maxLength='12' placeholder='541123456789' required onChange={handlePhone} />
+        <fieldset className='d-flex flex-column justify-content-center gap-2 my-4'>
+          <label className='form-label' htmlFor='telefono'>Teléfono (10 dígitos)</label>
+          <input className='form-control' type='tel' id='telefono' minLength='10' maxLength='10' placeholder='1123456789' required onChange={handlePhone} />
         </fieldset>
 
-        <fieldset className='form-group d-flex flex-column justify-content-center gap-2 my-4'>
-          <label htmlFor='email'>Email</label>
+        <fieldset className='d-flex flex-column justify-content-center gap-2 my-4'>
+          <label className='form-label' htmlFor='email'>Email</label>
           <input className='form-control' type='email' id='email' placeholder='linustorvalds@outlook.com' required onChange={handleEmail} />
         </fieldset>
 
         <div className='d-flex justify-content-center'>
-          <button type='button' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>
+          <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>
         </div>
 
       </form>
