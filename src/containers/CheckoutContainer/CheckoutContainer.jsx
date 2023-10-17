@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import { CartContext } from '../../context/cartContext'
-import CheckoutForm from '../CheckoutForm/CheckoutForm'
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm'
 import { addDoc, collection, getFirestore, doc, updateDoc } from 'firebase/firestore'
-import Loader from '../Loader/Loader'
+import Order from '../../components/Order/Order'
 
 function Checkout() {
   const { cart, clear } = useContext(CartContext)
@@ -61,11 +61,10 @@ function Checkout() {
           })
 
           clear()
-          setLoading(false)
         } catch (error) {
           console.error('No se pudo crear la orden.')
-          setLoading(false)
         }
+        setLoading(false)
       }
     } else {
       console.error('No se pudo crear la orden. Completar todos los campos requeridos.')
@@ -74,23 +73,16 @@ function Checkout() {
 
   if (!loading && !orderId) {
     return (
-      <CheckoutForm sendOrder={sendOrder} handleName={handleName} handlePhone={handlePhone} handleEmail={handleEmail} handleCaptcha={handleCaptcha} />
+      <CheckoutForm
+        sendOrder={sendOrder}
+        handleName={handleName}
+        handlePhone={handlePhone}
+        handleEmail={handleEmail}
+        handleCaptcha={handleCaptcha} />
     )
   } else {
     return (
-      <>
-        {loading && (
-          <Loader message={'Creando orden...'} />
-        )}
-
-        {
-          orderId && (
-            <div className='d-flex h-100 justify-content-center align-items-center text-center balance fs-4'>
-              <p>Orden creada - ID: {orderId}</p>
-            </div>
-          )
-        }
-      </>
+      <Order loading={loading} orderId={orderId} />
     )
   }
 }

@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar/Navbar.jsx'
 import ItemListContainer from '../containers/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from '../containers/ItemDetailContainer/ItemDetailContainer.jsx'
 import Cart from '../components/Cart/Cart.jsx'
-import Checkout from '../components/Checkout/Checkout.jsx'
+import Checkout from '../containers/CheckoutContainer/CheckoutContainer.jsx'
 import { CartProvider } from '../context/cartContext.jsx'
 
 function Router() {
