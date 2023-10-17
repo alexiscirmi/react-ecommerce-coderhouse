@@ -1,6 +1,7 @@
+import ReCAPTCHA from 'react-google-recaptcha'
 import styles from './CheckoutForm.module.scss'
 
-function CheckoutForm({ handleName, handlePhone, handleEmail, sendOrder }) {
+function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sendOrder }) {
 
   return (
     <div className={`pb-5 ${styles.checkout}`}>
@@ -22,6 +23,8 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, sendOrder }) {
           <label className='form-label' htmlFor='email'>Email</label>
           <input className='form-control' type='email' id='email' placeholder='linustorvalds@outlook.com' required onChange={handleEmail} />
         </fieldset>
+
+        <ReCAPTCHA sitekey="6Ledm1soAAAAAGwoRJq8JOw5VBLOZgV0NUcZzt4v" onChange={handleCaptcha} />
 
         <div className='d-flex justify-content-center'>
           <button type='submit' className='btn btn-primary mt-4' onClick={sendOrder}>Crear orden</button>

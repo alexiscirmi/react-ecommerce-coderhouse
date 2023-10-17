@@ -24,11 +24,14 @@ function Checkout() {
     setEmail(e.target.value)
   }
 
+  const [verified, setVerified] = useState(false)
+  const handleCaptcha = () => setVerified(true)
+
   const [orderId, setOrderId] = useState(undefined)
 
   const sendOrder = async (e) => {
 
-    if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@')) {
+    if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@') && verified) {
       e.preventDefault()
       setLoading(true)
 
@@ -71,7 +74,7 @@ function Checkout() {
 
   if (!loading && !orderId) {
     return (
-      <CheckoutForm sendOrder={sendOrder} handleName={handleName} handlePhone={handlePhone} handleEmail={handleEmail} />
+      <CheckoutForm sendOrder={sendOrder} handleName={handleName} handlePhone={handlePhone} handleEmail={handleEmail} handleCaptcha={handleCaptcha} />
     )
   } else {
     return (
