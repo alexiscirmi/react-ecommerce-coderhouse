@@ -49,8 +49,16 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
           <input className='form-control' type='email' id='email' name='email' placeholder='linustorvalds@outlook.com' required onChange={handleEmail} />
         </fieldset>
 
-        <textarea name='cart' className='d-none' value={JSON.stringify(cart)} readOnly />
+        {/* Hidden information for EmailJS */}
         <textarea name='orderId' className='d-none' value={orderId} readOnly />
+        <textarea name='cart' className='d-none' value={
+          cart.map(item => (
+            `
+            ${JSON.stringify(item.title)} - Cantidad: ${JSON.stringify(item.quantity)} - Precio: $${JSON.stringify(item.price)}
+            `
+          )).join('')
+        } readOnly />
+        <textarea name='total' className='d-none' value={JSON.stringify(cart.reduce((accumulator, item) => accumulator + item.price, 0))} readOnly />
 
         <ReCAPTCHA sitekey="6Ledm1soAAAAAGwoRJq8JOw5VBLOZgV0NUcZzt4v" onChange={handleCaptcha} />
 
