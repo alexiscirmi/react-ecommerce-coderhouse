@@ -58,7 +58,7 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
             `
           )).join('')
         } readOnly />
-        <textarea name='total' className='d-none' value={JSON.stringify(cart.reduce((accumulator, item) => accumulator + item.price, 0))} readOnly />
+        <textarea name='total' className='d-none' value={JSON.stringify(cart.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0))} readOnly />
 
         <ReCAPTCHA sitekey="6Ledm1soAAAAAGwoRJq8JOw5VBLOZgV0NUcZzt4v" onChange={handleCaptcha} />
 
