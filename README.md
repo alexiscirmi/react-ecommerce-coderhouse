@@ -1,7 +1,7 @@
 # TECNOW - ReactJS App
 
 TECNOW es una tienda ficticia de teléfonos celulares, laptops y tablets.
-Este proyecto fue creado usando [Create React App](https://github.com/facebook/create-react-app) para el [curso de ReactJS de Coderhouse](https://www.coderhouse.com/online/reactjs), conforme a sus estrictas consignas.
+Este proyecto fue creado usando [Create React App](https://github.com/facebook/create-react-app) para el [curso de ReactJS de Coderhouse](https://www.coderhouse.com/online/reactjs), conforme a sus consignas. Adicionalmente, se han agregado características como gestión de stocks, localStorage, reCAPTCHA y envío de correos al cliente vía EmailJS.
 
 ## Instrucciones para inicializar el proyecto
 
@@ -35,7 +35,7 @@ Al ingresar al detalle de algún producto, se puede seleccionar la cantidad de p
 Al revisar el carrito, se pueden ver los datos de los productos elegidos, con los subtotales correspodientes y el total a pagar. Se pueden quitar o agregar más unidades de cada producto desde aquí mismo, e incluso hay un botón para limpiar el carrito. Con el botón "Continuar" se accede al formulario final.
 
 ### Checkout
-Aquí, el comprador completa el formulario con su nombre, número de teléfono y correo electrónico. Al hacer clic en "Crear orden" se genera el pedido, se envía al vendedor y se muestra al comprador el número de referencia del mismo.
+Aquí, el comprador completa el formulario con su nombre, número de teléfono y correo electrónico. Al hacer clic en "Crear orden" se genera el pedido, se envía al comprador vía correo electrónico y se le muestra el número de referencia, mientras el vendedor lo almacena en Firebase y en la bandeja de salida de correos electrónicos. Además, la cantidad pedida se resta del stock mostrado en la página.
 
 GNU Affero General Public License v3.0
 
