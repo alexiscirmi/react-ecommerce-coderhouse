@@ -39,4 +39,5 @@ Aquí, el comprador completa el formulario con su nombre, número de teléfono y
 
 GNU Affero General Public License v3.0
 
-![Certificate](https://github.com/cirmialexis/coderhouse-react-project/assets/1320538/8f1ce089-7fd8-46ec-ab31-e9ca10f3d012)
+![Coderhouse_Frontend_certificate_en](https://github.com/cirmialexis/coderhouse-react-project/assets/1320538/0842b603-c0ad-4a3c-b944-adf6bfeb83ce)
+
