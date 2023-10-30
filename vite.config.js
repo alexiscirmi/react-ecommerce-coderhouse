@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/react-to-do-list/',
+  base: '/coderhouse-react-project/',
   server: { host: true },
   plugins: [react()],
 })
