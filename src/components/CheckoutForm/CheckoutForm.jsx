@@ -10,7 +10,7 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
   const sendEmail = () => {
     if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@') && cart.length > 0 && verified) {
       try {
-        emailjs.sendForm('service_7y665pr', 'template_0zjm6ef', form.current, 'zdDI_XXmLlPkBea6o')
+        emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
           .then((result) => {
             console.log(result.text)
           }, (error) => {
@@ -60,7 +60,7 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
         } readOnly />
         <textarea name='total' className='d-none' value={JSON.stringify(cart.reduce((accumulator, item) => accumulator + item.price * item.quantity, 0))} readOnly />
 
-        <ReCAPTCHA sitekey="6Ledm1soAAAAAGwoRJq8JOw5VBLOZgV0NUcZzt4v" onChange={handleCaptcha} />
+        <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} onChange={handleCaptcha} />
 
         <div className='d-flex justify-content-center'>
           <button type='submit' className='btn btn-primary mt-4'>Crear orden</button>
