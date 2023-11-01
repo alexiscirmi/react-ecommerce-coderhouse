@@ -7,13 +7,11 @@ function Order({ loading, orderId }) {
         <Loader message={'Creando orden...'} />
       )}
 
-      {
-        orderId && (
-          <div className='d-flex h-100 justify-content-center align-items-center text-center balance fs-4'>
-            <p>Orden creada - ID: {orderId}</p>
-          </div>
-        )
-      }
+      {orderId && (
+        <div className='d-flex h-100 justify-content-center align-items-center text-center balance fs-4'>
+          <p>Orden creada - ID: {orderId}</p>
+        </div>
+      )}
     </>
   )
 }
