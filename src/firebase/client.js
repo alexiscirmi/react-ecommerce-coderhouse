@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore'
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.FIREBASE_API_KEY,
-  authDomain: import.meta.env.FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.FIREBASE_APP_ID
+  apiKey: 'AIzaSyCSfQFEpcnu-wemOIgtic4_in4Q6zdRDSs',
+  authDomain: 'coderhouse-react-project-2d313.firebaseapp.com',
+  projectId: 'coderhouse-react-project-2d313',
+  storageBucket: 'coderhouse-react-project-2d313.appspot.com',
+  messagingSenderId: '178133306292',
+  appId: '1:178133306292:web:29d759118f6c32136a80e1'
 }
 
 // Initialize Firebase
