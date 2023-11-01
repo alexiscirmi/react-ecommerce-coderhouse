@@ -51,7 +51,6 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
 
 
         {/* Hidden information for EmailJS */}
-        <textarea name='orderId' className='d-none' value={orderId} readOnly />
         <textarea name='cart' className='d-none' value={
           cart.map(item => (
             `
