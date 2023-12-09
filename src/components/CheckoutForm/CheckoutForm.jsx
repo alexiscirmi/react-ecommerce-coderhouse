@@ -3,14 +3,14 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import emailjs from '@emailjs/browser'
 import styles from './CheckoutForm.module.scss'
 
-function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sendOrder, orderId, cart, name, phone, email, verified }) {
+function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sendOrder, cart, name, phone, email, verified }) {
 
   const form = useRef()
 
   const sendEmail = () => {
     if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@') && cart.length > 0 && verified) {
       try {
-        emailjs.sendForm('service_7y665pr', 'template_0zjm6ef', form.current, 'zdDI_XXmLlPkBea6o')
+        emailjs.sendForm('service_7y665pr', 'template_0zjm6ef', form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
           .then((result) => {
             console.log(result.text)
           }, (error) => {
