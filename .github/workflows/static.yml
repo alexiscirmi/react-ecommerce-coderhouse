@@ -39,6 +39,8 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+      - name: Set up environment variables
+        run: echo "VITE_EMAILJS_PUBLIC_KEY=${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}" >> $GITHUB_ENV
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
