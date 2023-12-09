@@ -10,7 +10,7 @@ function CheckoutForm({ handleName, handlePhone, handleEmail, handleCaptcha, sen
   const sendEmail = () => {
     if (name && phone && phone.length === 10 && parseInt(phone) && email && email.includes('@') && cart.length > 0 && verified) {
       try {
-        emailjs.sendForm('service_7y665pr', 'template_0zjm6ef', form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+        emailjs.sendForm('service_7y665pr', 'template_0zjm6ef', form.current, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
           .then((result) => {
             console.log(result.text)
           }, (error) => {
