@@ -33,4 +33,4 @@ Aquí, el comprador completa el formulario con su nombre, número de teléfono y
 
 GNU General Public License v3.0
 
-![Coderhouse_Frontend_certificado_es](https://github.com/alexiscirmi/react-ecommerce-coderhouse/assets/1320538/d2738ab8-aa2d-4c3e-87ac-2e8d56fde67b)
+![Coderhouse_Frontend_certificate_en](https://github.com/alexiscirmi/react-ecommerce-coderhouse/assets/1320538/8286616c-0dc6-4f2f-985d-1b4593d6dd51)
